@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>jsonp实现</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <script src="./jsonp.js"></script>
+  <script>
+    // function jsonp(req) {
+    //   var script = document.createElement('script');
+    //   var url = req.url + '?callback=' + req.callback.name;
+    //   script.src = url;
+    //   document.getElementsByTagName('head')[0].appendChild(script);
+    // }
+
+    // function hello(res) {
+    //   console.log(res.data);
+    // }
+    // jsonp({
+    //   url: 'http://127.0.0.1:3333/jsonp',
+    //   callback: hello
+    // });
+
+    jsonp({
+      url: "http://127.0.0.1:3333/jsonp",
+      data: {
+        id: 1
+      },
+      callback: function (ret) {
+        console.log(ret);
+      }
+    });
+  </script>
+</body>
+
+</html>
